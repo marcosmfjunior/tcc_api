@@ -1,0 +1,17 @@
+Será apresentado a implementação do Angular.
+Se tiver tempo, apresentaremos a utilização de um framework mobile usando o mesmo código para os interessados.
+
+-->WEB
+  Todos as bibliotecas estão incluidas no projeto.
+  Será abordado apenas o front-end.
+  Rodar em servidor para o browser não barrar as requisições.
+
+-MOBILE
+  Instalar o phonegap http://phonegap.com/install/
+  
+ --MATERIAL UTIL
+ http://vizir.com.br/2013/09/introducao-ao-angularjs/
+ http://javascriptbrasil.com/2013/10/23/aprenda-angularjs-com-estes-5-exemplos-praticos/
+ https://angular.io/docs/ts/latest/quickstart.html
+  
+  

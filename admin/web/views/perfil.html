@@ -1,0 +1,23 @@
+<div class="col-md-12">
+<div class="btn-group pull-left">
+ <button class="btn btn-primary" ng-click="mudaPagina('/')" >
+   Voltar
+  </button>
+</div>
+  <div class="jumbotron">
+   <h1>@{{nick}}</h1>
+  </div>
+
+  <h1>Ultimos Tweets</h1>
+  <hr>  
+
+  <div  ng-repeat="item in list | filter:busca" class="panel panel-default">
+    <div class="panel-heading clearfix">
+      {{item.data | date:'dd/MM'}}  - {{item.data | date:'HH : mm'  }}
+    </div>
+    <div class="modal-body">
+      <a href="#/perfil/{{item.nick}}" ><div class="titulo">@{{ item.nick }}</div></a>
+      <div class="tweet">{{ item.tweet }}</div>
+    </div>
+  </div>
+</div>

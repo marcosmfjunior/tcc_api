@@ -1,0 +1,61 @@
+
+<div class="col-md-12">
+  <div class="jumbotron">
+    <div class="container">      
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">@</span>
+          <!-- declaraçao do model novoNick
+               [ng-model é como uma variavel do angular injetada no html] -->
+          <input type="text" class="form-control" ng-model="novoNick" placeholder="seu nick" size="50">
+        </div>
+        <br>
+        <label for="exampleInputEmail1">O que você está pensando? </label>
+        <!-- a utilização de {{}} é para o data binding 
+            [Data-binding in Angular apps is the automatic synchronization of data between the model and view components]
+        -->
+        {{140 - novoTweet.length}} caracteres restantes
+        <input type="text" class="form-control" ng-model="novoTweet" ng-trim="false" placeholder="digite seu tweet">
+      </div>
+      <a href="javascript:;" ng-if="novoTweet.length<140 && !editando" ng-click="add()" class="btn btn-default">Twittar</a>
+      <!--ira mostrar o botao se editando for true -->
+      <a hjavascript:;ef="javascript:;" ng-if="editando" ng-click="salvarEdita()" class="btn btn-default">Edita</a>
+
+    </div>
+  </div>
+
+  
+
+  <h1>Ultimos Tweets</h1>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">
+      <span class="glyphicon glyphicon-search"></span>
+    </span>
+    <input type="text" class="form-control" ng-model="busca" placeholder="Busque por nick, tweet, ou qualquer coisa que desejar" size="50">
+  </div>
+  <hr>  
+<!-- 
+ng-repeat é um for do angular 
+   o | (pipe) é usado para aplicar filtros
+[A filter formats the value of an expression for display to the user]  
+no caso dessa aplicação, o filtro é aplicado para cada item que está em list.
+-->
+
+  <div  ng-repeat="item in list | filter:busca" class="panel panel-default">
+    <div class="panel-heading clearfix">
+      {{item.data | date:'dd/MM'}}  - {{item.data | date:'HH : mm'  }}
+      <div class="btn-group pull-right">
+        <button class="btn btn-primary" href="javascript:;" ng-click="edita(item)">
+          Edita
+        </button>
+        <button class="btn btn-danger" href="javascript:;" ng-click="deleta(item)">
+          Exclui
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <a href="#/perfil/{{item.nick}}" ><div class="titulo">@{{ item.nick }}</div></a>
+      <div class="tweet">{{ item.tweet }}</div>
+    </div>
+  </div>
+</div>

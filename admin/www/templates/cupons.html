@@ -1,0 +1,89 @@
+<ion-view view-title="Meus Cupons">
+  <ion-content>
+  	<div ng-repeat="cupom in cupons" > 
+<!-- 	  	<div class="card">
+			<div class="cardWrap">
+			  <div class="cartao cardLeft">
+			    <h1>{{cupom.estabelecimento}}</h1>
+			    <div class="name">
+			      <span>Estabelecimento</span>
+			      <h2>{{cupom.nome}}</h2>
+			    </div>
+			    <div class="title">
+			      <span>Validade</span>
+			      <h2>{{cupom.validade}}</h2>
+			    </div>
+			    <div class="name">
+			      <span>Desconto</span>
+			      <h2>{{cupom.desconto}}</h2>
+			    </div>
+			   </div>
+			  <div class="cartao cardRight">
+			    <div class="usado"><br>Disponível</div>
+			    <div class="number">
+			      <h3>					    <button class="button button-block button-assertive">
+						  {{cupom.numero}}
+						</button></h3>
+			    </div>
+			  </div>
+			</div>
+		</div> -->
+	 	<div class="list card">
+		 	<div class="ribbon-wrapper-green" ng-show="cupom.utilizado">
+		 		<div class="ribbon-green">CUPOM UTILIZADO</div>
+		 	</div>
+			<ul class="row" align="center">
+			  <li class="col-25">
+			  	<div class="item item-image">
+			    	<img ng-src="{{cupom.logo}}">
+			    </div>
+			    	{{cupom.estabelecimento}}
+			   </li>
+			    <li class="col-75">
+			  	  <h5 align="center" style="white-space: normal !important">{{cupom.nome}}</h5>
+				    <p align="center" >
+			               <span  >Válido até</span>
+			               {{cupom.validade}}
+			              <span>Desconto</span>
+			              {{cupom.desconto}}                       
+					    <button class="button button-block button-assertive ">
+						  {{cupom.numero}}
+						</button>
+					</p>			    
+				</li>
+			</ul>	
+		</div>
+	</div>
+	<!-- <div class="card">
+		<div class="cardWrap">
+		  <div class="cartao cardLeft">
+		    <h1>Startup <span>Cinema</span></h1>
+		    <div class="title">
+		      <h2>How I met your Mother</h2>
+		      <span>movie</span>
+		    </div>
+		    <div class="name">
+		      <h2>Vladimir Kudinov</h2>
+		      <span>name</span>
+		    </div>
+		    <div class="seat">
+		      <h2>156</h2>
+		      <span>seat</span>
+		    </div>
+		    <div class="time">
+		      <h2>12:00</h2>
+		      <span>time</span>
+		    </div>
+		    
+		  </div>
+		  <div class="cartao cardRight">
+		    <div class="eye"></div>
+		    <div class="number">
+		      <h3>156</h3>
+		      <span>seat</span>
+		    </div>
+		  </div>
+		</div>
+	</div> -->
+  </ion-content>
+</ion-view>
